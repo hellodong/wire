@@ -11,6 +11,18 @@
 **组网**: 自组网方式多样,采用星型，网状和树状网络结构，由一个主节点管理若干个子节点，最多一个主节点可管理２５４个子节点;同时主节点还可由上一层网络节点管理，最多组成６５０００个节点网络;
     
 ### 温湿度传感
+#### CLUSTER ID
+| Identifier | Name |
+| --- | ---|
+| 0x0402 | 温度 |
+| 0x0405 | 湿度 |
+#### Temprature Attribute Set
+| ID |  Name | Type  | Range  | Access |
+| ------ | --------------- | --- | --- | --- |
+|0x0000| MeasuredValue(测量值) | int16 | MinMeasuredValue – </br>MaxMeasuredValue | RP |
+|0x0001| MinMeasuredValue(最小值) | int16 | 0x954d – 0x7ffe | R |
+| 0x0002| MaxMeasuredValue(最大值) |int16 | 0x954e – 0x7fff | R |
+
 
 ### 压力传感
     
