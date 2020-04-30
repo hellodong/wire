@@ -10,20 +10,31 @@
 **安全**: 提供了数据完整性和鉴权功能，加密算法采用AES-128</br>
 **组网**: 自组网方式多样,采用星型，网状和树状网络结构，由一个主节点管理若干个子节点，最多一个主节点可管理２５４个子节点;同时主节点还可由上一层网络节点管理，最多组成６５０００个节点网络;
     
-### 温湿度传感
+
+### 温湿度，压力传感
+
+|  设备 | DeviceID   |
+| --- | --- |
+| 温湿度传感器  | 0x0302 |
+|  压力传感器  | 0x0305 |
+
 #### CLUSTER ID
 | Identifier | Name |
 | --- | ---|
 | 0x0402 | 温度 |
 | 0x0405 | 湿度 |
-#### Temprature Attribute Set
-| ID |  Name | Type  | Range  | Access |
+| 0x0403 | 压力 |
+#### Attribute Set
+| ID |  Name | Type  | Access |
 | ------ | --------------- | --- | --- | --- |
-|0x0000| MeasuredValue(测量值) | int16 | MinMeasuredValue – </br>MaxMeasuredValue | RP |
-|0x0001| MinMeasuredValue(最小值) | int16 | 0x954d – 0x7ffe | R |
-| 0x0002| MaxMeasuredValue(最大值) |int16 | 0x954e – 0x7fff | R |
+|0x0000| MeasuredValue(测量值) | int16 |  RP |
+|0x0001| MinMeasuredValue(最小值) | int16 |  R |
+| 0x0002| MaxMeasuredValue(最大值) |int16 |  R |
 
+温度传感器范围值在-273.15C~327.67  对应十六进制 0x954d~0xfff,最小刻度为0.01C
 
-### 压力传感
-    
+湿度传感器范围值在0%~100% 对应十六进制0x0000~0x270f,最小刻度为0.01%
+
+压力传感器范围值在-3276.7Kpa~3276.7Kpa 对应十六进制0x8001~0x7fff
+
 
